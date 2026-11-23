@@ -1,32 +1,31 @@
 # Sai Kumar Tallapaneni’s portfolio
 
-A static React portfolio built with Vite, Tailwind CSS, and Lucide. Resume-derived content lives in `src/profile.js`. The contact section uses email, LinkedIn, and the GitHub account associated with this repository. The site has no backend or credentials.
+A Black & Champagne portfolio built with Next.js, React, TypeScript, Tailwind CSS, and Lucide. Resume-derived content lives in `src/profile.ts`. The approved original resume is in `public/` and becomes publicly downloadable when deployed.
 
 ## Preview and validate
 
-Use Node.js 24 with npm. From the repository root:
+On the same computer where you’ll open the browser, install Node.js 24, check out the portfolio branch, and run these commands from the repository root:
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open `http://localhost:5173/myportfolio/`. To review the same build used in deployment:
+Leave the terminal running and open `http://localhost:3000/myportfolio/`. If you start the server in a cloud environment, open it through that environment’s browser preview when available.
 
 ```sh
 npm run lint
 npm test
 npm run build
-npm run preview
 ```
 
-Open `http://localhost:4173/myportfolio/`.
+The static build is written to `out/`. There is no backend and no runtime configuration.
 
 ## Publish to GitHub Pages after review
 
 1. Merge the reviewed changes into `main`.
-2. A repository administrator opens **Settings → Pages → Build and deployment** and sets **Source** to **GitHub Actions**. A private repository needs a GitHub plan that supports Pages for private repositories.
-3. In **Actions → Deploy portfolio to GitHub Pages**, click **Run workflow**, select **main**, and start the run. If the `github-pages` environment has required reviewers, have a reviewer approve the deployment there.
-4. Open https://saikumart0123.github.io/myportfolio/ when the deployment succeeds. Confirm that the site loads and that navigation, project details, and contact links work.
+2. A repository administrator opens **Settings → Pages → Build and deployment** and sets **Source** to **GitHub Actions**.
+3. In **Actions → Deploy portfolio to GitHub Pages**, select **Run workflow** and choose `main`. If the `github-pages` environment requires reviewers, have a reviewer approve the deployment.
+4. When the deployment succeeds, open https://saikumart0123.github.io/myportfolio/ and verify the page and resume download.
 
-The workflow runs on manual dispatch from `main`. If the repository name changes, update the Vite base path, the canonical and Open Graph URLs, and the links in this README.
+The workflow only runs on manual dispatch from `main`. If the repository name changes, update the Next.js base path, the resume URL in `src/profile.ts`, and the canonical and Open Graph URLs.
