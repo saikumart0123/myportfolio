@@ -1,13 +1,13 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { URL } from 'node:url'
-import { experience, navigation, profile, projects, skills } from '../src/profile.js'
+import { experience, navigation, profile, projects, skills } from '../src/profile.ts'
 
 test('project details have unique IDs, technologies, and a corresponding client', () => {
   assert.equal(new Set(projects.map(project => project.id)).size, projects.length)
   for (const project of projects) {
     assert.ok(experience.some(job => job.company === project.organization))
-    assert.ok(project.approach && project.outcome && project.stack.length)
+    assert.ok(project.challenge && project.approach && project.outcome && project.flow.length && project.stack.length)
   }
 })
 
